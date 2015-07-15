@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       if session[:user_id] == nil || current_user == nil
           respond_to do |format|
               flash[:warning] = "Must be logged in to do that."
-              format.html { redirect_to root_path }
+              format.html { redirect_to login_path }
           end
       end
   end

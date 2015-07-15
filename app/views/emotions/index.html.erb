@@ -1,0 +1,14 @@
+<div class="row text-center">
+    <%= link_to "I'm feeling...", new_emotion_path, :class => "btn btn-default" %>
+</div>
+
+<div class="row text-center">
+    
+    <% if @emotions.count > 0 %>
+    <%= render @emotions %>
+    <%= will_paginate @emotions, renderer: BootstrapPagination::Rails %>
+    <% else %>
+    <h2>Nothing to see here!</h2>
+    <% end %>
+
+</div>

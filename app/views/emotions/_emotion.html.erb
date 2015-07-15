@@ -1,0 +1,8 @@
+<div class="text-left col-md-3">
+<h4><%= emotion.name %></h4>
+<pre><%= emotion.description %></pre>
+<% if emotion.latitude && emotion.longitude %>
+<%= emotion.latitude %>, <%= emotion.longitude %><br>
+<% end %>
+<small><%= emotion.created_at %></small>
+</div>
