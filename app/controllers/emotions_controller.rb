@@ -15,7 +15,7 @@ class EmotionsController < ApplicationController
         if @emotion.save
             redirect_to emotions_path
         else
-            render 'errsav'
+            render 'new'
         end
     end
     
@@ -33,11 +33,18 @@ class EmotionsController < ApplicationController
         if @emotion.update(emotion_params)
             redirect_to emotions_path
         else
-            render 'errsav'
+            render 'edit'
         end
     end
     
     def destroy
+        @emotion = current_user.emotions.find(params[:id])
+        
+        if @emotion.destroy
+            redirect_to emotions_path
+        else
+            render 'show'
+        end
     end
     
     def emotion_params

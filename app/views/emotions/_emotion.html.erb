@@ -1,8 +1,14 @@
-<div class="text-left col-md-3">
-<h4><%= emotion.name %></h4>
-<pre><%= emotion.description %></pre>
-<% if emotion.latitude && emotion.longitude %>
-<%= emotion.latitude %>, <%= emotion.longitude %><br>
-<% end %>
-<small><%= emotion.created_at %></small>
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong><%= emotion.name %></strong></div>
+        <div class="panel-body"><%= emotion.description %></div>
+        <div class="panel-footer">
+            <div class="small">
+                <% if emotion.latitude && emotion.longitude %>
+                <%= emotion.latitude %>, <%= emotion.longitude %><br>
+                <% end %>
+                <%= emotion.created_at %>
+            </div>
+        </div>
+    </div>
 </div>
